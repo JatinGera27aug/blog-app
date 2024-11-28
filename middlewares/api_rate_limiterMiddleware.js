@@ -2,6 +2,6 @@
 const rateLimit = require('api-rate-limiter-middleware')
 const BlogLimiter = rateLimit({
     minutes: 5,
-    maxRequests: 3
+    maxRequests: 40
 })
 module.exports = BlogLimiter;
