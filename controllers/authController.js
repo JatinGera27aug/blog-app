@@ -49,7 +49,7 @@ class AuthController {
                     if(isUser.email === email && isMatch){
 
                         //token generation
-                        const token = jwt.sign({userId: isUser._id}, process.env.JWT_SECRET, {expiresIn:"10m"});   //{expiresIn:"1d"}
+                        const token = jwt.sign({userId: isUser._id}, process.env.JWT_SECRET, {expiresIn:"2d"});   //{expiresIn:"1d"}
                         
                         res.status(200).header("auth-token", token).json({message:"user login successfully", token, name: isUser.username})
                     }
