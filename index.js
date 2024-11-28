@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 app.set(express.urlencoded({ extended: true }));
 const cors = require('cors');
+const BlogLimiter = require('./middlewares/api_rate_limiterMiddleware')
 require('dotenv').config();
 const authRoutes = require('./routes/blog.js')
 const connectToDb = require('./config/db.js')
@@ -24,7 +25,7 @@ app.get('/',(req,res)=>{
 
 app.use(express.static("public/uploads"))   // else file will not show in frontend
 //api routes
-app.use('/api',authRoutes)
+app.use('/api',BlogLimiter, authRoutes)
 
 app.listen(PORT,'0.0.0.0',()=>{
     console.log(`Server is running on port ${PORT}`)
