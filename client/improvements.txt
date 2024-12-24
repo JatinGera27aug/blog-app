@@ -1,0 +1,11 @@
+ek to ki images dikhe, multer ki jgh, cloudinary ka use ab krna hoga
+session expired wala page nhi aa rha netlify par, siddha error dikhata
+(backend mein time increase krna to 2 days) -- then render par update krna  --d
+fir us link ko frontend mein, then build krna nya , then netlify par  --d 
+
+
+
+abhi do dikkat: kya backend code update hua automatic render par ki nhi, warna firse deploy krna pdega  --d
+
+now, ise with nginx, making revervse proxy too, make with dockercompose and upload whole code on github
+
